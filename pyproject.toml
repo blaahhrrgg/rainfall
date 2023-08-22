@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "rainfall"
+version = "0.1.0"
+description = "Some analysis on rainfall data."
+homepage = "https://github.com/blaahhrrgg/rainfall"
+repository = "https://github.com/blaahhrrgg/rainfall"
+readme = "README.md"
+authors = []
+
+
+[tool.poetry.dependencies]
+python = "3.11.4"
+numpy = "^1.24.3"
+pandas = "^2.0.3"
+matplotlib = "^3.7.2"
+seaborn = "^0.12.0"
+lifelines = "^0.27.7"
+jupyter = "1.0.0"
+openpyxl = "^3.1.2"
+
+
+[tool.coverage.run]
+omit = [".*", "*/site-packages/*", "*/__init__.py", "*/tests/*"]
+
+[tool.coverage.report]
+fail_under = 0
+
+[tool.semantic_release]
+version_variable = [
+    "pyproject.toml:version"
+]
+
+branch = "main"
+changelog_file = "CHANGELOG.md"
+build_command = "poetry build"
+upload_to_release = false
+upload_to_pypi = false
+remove_dist = false
+patch_without_tag = false
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
